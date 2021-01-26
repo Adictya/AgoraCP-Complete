@@ -1,0 +1,135 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#container{
+    background-color: #099dfd;
+}
+.left-pane{
+    background-color: white;
+    width: 20vw;
+    height: 100vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0px 4px 52px rgba(0, 0, 0, 0.13);
+}
+
+.logo{
+    width: 60%;
+    padding-top: 30px;
+    margin: 0 auto;
+}
+
+#img-container{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.loginContainer{
+    margin-top: 20vh;
+}
+
+#headingText{
+    font-size: 1.5rem;
+
+}
+#highlighted{
+    color: #099dfd;
+}
+
+#email{
+    margin-top: 20px;
+}
+
+input{
+    margin-top: 10px;
+    padding: 5px;
+    width: 90%;
+    font-size: 1.25rem;
+    border: 2px solid #099dfd;
+    border-radius: 5px;
+}
+.submitButton{
+    background-color: #099dfd;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    color: white;
+    border: none;
+    font-size: 1.25rem;
+    border-radius: 10px;
+}
+
+#flexContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+#right-pane{
+    flex: 1;
+    text-align: center;
+}
+
+#circleContainer{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 60px;
+    width: 650px;
+    height: 650px;
+    border-radius: 1000px;
+    background-color: #ffffff4b;
+    justify-items: center;
+    margin-bottom: 100px;
+}
+
+#illustration{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#illustrationContainer{
+    width: 500px;
+    margin: auto;
+    padding-bottom: 45px;
+}
+
+#bottomText{
+    font-size: 1.75rem;
+    color: white;
+}
+
+.flexContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.right-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#SelfStream{
+    margin-top: 150px;
+    justify-self: center;
+    border: 2px solid #099dfd;
+    width: 800px;
+    height: 500px;
+}
+
+#remoteStream{
+    text-align: left;
+    margin-top: 20px;
+    justify-self: center;
+    border: 2px solid #099dfd;
+    width: 400px;
+    height: 250px;
+}
