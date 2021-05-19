@@ -2,6 +2,27 @@ let handlefail = function (err) {
     console.log(err)
 }
 
+let appId = "a6af85f840ef43108491705e2315a857";
+let globalStream;
+
+let client = AgoraRTC.createClient({
+    mode: "live",
+    codec: "h264"
+})
+
+client.init(appId, () => console.log("AgoraRTC Client Connected"), handlefail
+)
+
+function removeMyVideoStream() {
+    globalStream.stop();
+}
+
+function removeVideoStream(evt) {
+    let stream = evt.stream;
+    stream.stop();
+    let remDiv = document.getElementById(stream.getId())
+    remDiv.parentNode.removeChild(remDiv);
+}
 
 function addVideoStream(streamId) {
     console.log()
@@ -16,15 +37,6 @@ function addVideoStream(streamId) {
 document.getElementById("join").onclick = function () {
     let channelName = document.getElementById("channelName").value;
     let Username = document.getElementById("username").value;
-    let appId = "a6af85f840ef43108491705e2315a857";
-
-    let client = AgoraRTC.createClient({
-        mode: "live",
-        codec: "h264"
-    })
-
-    client.init(appId, () => console.log("AgoraRTC Client Connected"), handlefail
-    )
 
     client.join(
         null,
@@ -41,6 +53,8 @@ document.getElementById("join").onclick = function () {
                 console.log(`App id: ${appId}\nChannel id: ${channelName}`)
                 client.publish(localStream)
             })
+
+            globalStream = localStream
         }
     )
 
@@ -56,4 +70,10 @@ document.getElementById("join").onclick = function () {
         stream.play(stream.getId());
     })
 
+
+    client.on("peer-leave", function (evt) {
+        console.log("Peer has left")
+        removeVideoStream(evt)
+    }
+    )
 }
